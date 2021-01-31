@@ -1,0 +1,5 @@
+<input type="text" #input (input)="type($event)" (blur)="onTouched()" [disabled]="disabled">
+<div class="error"
+ *ngIf="controlDir && !controlDir.control!.valid">
+  This field is invalid;
+</div>

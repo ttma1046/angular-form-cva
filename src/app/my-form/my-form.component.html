@@ -1,0 +1,18 @@
+<h1>Form</h1>
+
+<form #f="ngForm">
+  <input type="text" name="one" ngModel>
+  <select name="two" ngModel>
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+  <required-text name="three" ngModel>
+  </required-text>
+  <address name="address" ngModel></address>
+  <time-picker name="time" ngModel></time-picker>
+</form>
+
+<p>Form: {{ f.value | json }}</p>
+<p>Form status: {{ f.control.status }}</p>

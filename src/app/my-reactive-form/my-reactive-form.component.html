@@ -1,0 +1,24 @@
+<h1>Reactive Form</h1>
+
+<form [formGroup]="myForm">
+  <input type="text" name="one" formControlName="one">
+  <select name="two" formControlName="two">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+  <required-text name="three" formControlName="three">
+  </required-text>
+  <address name="address" formControlName="address"></address>
+  <time-picker name="time" formControlName="time"></time-picker>
+</form>
+
+<p>Form: {{ myForm.value | json }}</p>
+<p>Form status: {{ myForm.status }}</p>
+<p>three field errors: {{ three.errors | json }}</p>
+<p>Time field errors: {{ time.errors | json }}</p>
+
+
+
+

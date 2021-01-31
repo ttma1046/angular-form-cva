@@ -1,0 +1,42 @@
+<div class="tni-timepicker">
+  <form [formGroup]="timeForm">
+    <fieldset>
+      <div class="tni-timepicker__fieldset">
+        <mat-form-field appearance="fill">
+          <mat-label>Hour</mat-label>
+          <mat-select formControlName="hours" name="hours" required>
+            <mat-option value="">---</mat-option>
+            <mat-option *ngFor="let hour of hoursOptions" [value]="hour">{{ hour | number: "2.0-0" }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="hours?.errors?.required">Required</mat-error>
+        </mat-form-field>
+        <mat-form-field
+          appearance="fill"
+        >
+          <mat-label>Minute</mat-label>
+          <mat-select formControlName="minutes" name="minutes" required>
+            <mat-option value="">---</mat-option>
+            <mat-option *ngFor="let minute of minutesOptions"
+            [value]="minute">{{ minute | number: "2.0-0" }}</mat-option>
+          </mat-select>
+          <mat-error>Required</mat-error>
+        </mat-form-field>
+        <mat-form-field
+          appearance="fill"
+        >
+          <mat-label>AM/PM</mat-label>
+          <mat-select formControlName="meridian" name="meridian" required>
+            <mat-option value="">---</mat-option>
+            <mat-option value="AM">AM</mat-option>
+            <mat-option value="PM">PM</mat-option>
+          </mat-select>
+          <mat-error>Required</mat-error>
+        </mat-form-field>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+<p>Form: {{ timeForm.value | json }}</p>
+<p>Form status: {{ timeForm.status }}</p>
+

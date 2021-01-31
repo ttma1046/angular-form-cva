@@ -1,0 +1,12 @@
+:host {
+  // Mobile-first
+  display: block;
+
+  .tni-timepicker {
+    &__fieldset {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 0.5em;
+    }
+  }
+}
